@@ -230,3 +230,32 @@ button {
 #wrap>main, #wrap>main>article {
      flex-grow: 1;
 }
+
+/*************************************/
+/* Media queries                     */
+/* Responsividade para telas maiores */
+/*************************************/
+
+@media screen and (min-width: 480px) {
+
+    /* Menu principal */
+
+    #wrap>nav {
+        justify-content: center;
+    }
+
+    #wrap>nav a {
+        flex-direction: row;
+    }
+
+    #wrap>nav a:first-child {
+        margin-right: auto;
+    }
+    
+    #wrap>nav a i {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        margin-right: .25rem;
+    }
+
+}     
