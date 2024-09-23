@@ -11,7 +11,7 @@ def home():
     return "Hello World!"  
 
 # Define a rota para a URL '/contatos'
-@app.route('/contatos')
+@app.route('/contacts')
 def peteca():
     # Retorna uma mensagem simples
     return "Diga o que você quer agora!"  

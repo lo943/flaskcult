@@ -173,14 +173,14 @@ button {
 /* Article */
 
 #wrap>main>article {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Aside */
 
 #wrap>main>aside {
     background-color: #eee;
-    border-top: 4px dotted grey;
+    border-top: 4px dotted rgb(128, 128, 128);
 }
 
 /**********/
@@ -192,7 +192,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white
+    color: white;
 }
 
 #wrap>footer a {

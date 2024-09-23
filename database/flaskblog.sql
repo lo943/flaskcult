@@ -79,7 +79,6 @@ CREATE TABLE contact (
 -- Populando tabelas com dados fake --
 -- -------------------------------- --
 
-
 -- Tabela "staff" --
 
 INSERT INTO staff (
@@ -184,12 +183,12 @@ INSERT INTO staff (
 );
 
 -- Atualiza o type do staff --
-UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'admin' WHERE (`emp_id` = '1');
-UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '2');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'admin'  WHERE (`emp_id` = '1');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author', emp_status = 'off' WHERE (`emp_id` = '2');
 UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '4');
-UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '5');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author', emp_status = 'off' WHERE (`emp_id` = '5');
 UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '7');
-UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '8');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author', emp_status = 'del' WHERE (`emp_id` = '8');
 
 -- Tabela "article" --
 INSERT INTO article (
@@ -217,45 +216,10 @@ INSERT INTO article (
 </ul>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
     '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
-	-- 'emp_id' de um staff existente --
-	'3',
-    'Segundo artigo',
-    -- Deixe os mesmos valores para todos os outros artigos
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    'https://picsum.photos/300',
-    '
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
-<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
-<h4>Links:</h4>
-<ul>
-    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
-    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
-</ul>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
-    '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
+), (
 	-- 'emp_id' de um staff existente --
 	'4',
-    'Terceiro artigo',
+    'Fazendo códigos de farinha',
     -- Deixe os mesmos valores para todos os outros artigos
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'https://picsum.photos/300',
@@ -271,18 +235,10 @@ INSERT INTO article (
 </ul>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
     '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
+), (
 	-- 'emp_id' de um staff existente --
-	'5',
-    'Quarto artigo',
+	'4',
+    'Como assar Python temperado com Flask',
     -- Deixe os mesmos valores para todos os outros artigos
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'https://picsum.photos/300',
@@ -298,18 +254,10 @@ INSERT INTO article (
 </ul>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
     '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
+), (
 	-- 'emp_id' de um staff existente --
 	'2',
-    'Quinto artigo',
+    'Corrompendo o banco de dados',
     -- Deixe os mesmos valores para todos os outros artigos
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'https://picsum.photos/300',
@@ -325,18 +273,10 @@ INSERT INTO article (
 </ul>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
     '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
+), (
 	-- 'emp_id' de um staff existente --
-	'6',
-    'Sexto artigo',
+	'5',
+    'Comprando códigos pela Internet',
     -- Deixe os mesmos valores para todos os outros artigos
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'https://picsum.photos/300',
@@ -352,99 +292,86 @@ INSERT INTO article (
 </ul>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
     '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
-	-- 'emp_id' de um staff existente --
-	'7',
-    'Sétimo artigo',
-    -- Deixe os mesmos valores para todos os outros artigos
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    'https://picsum.photos/300',
-    '
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
-<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
-<h4>Links:</h4>
-<ul>
-    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
-    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
-</ul>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
-    '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
-	-- 'emp_id' de um staff existente --
-	'8',
-    'Oitavo artigo',
-    -- Deixe os mesmos valores para todos os outros artigos
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    'https://picsum.photos/300',
-    '
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
-<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
-<h4>Links:</h4>
-<ul>
-    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
-    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
-</ul>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
-    '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
-	-- 'emp_id' de um staff existente --
-	'1',
-    'Nono artigo',
-    -- Deixe os mesmos valores para todos os outros artigos
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    'https://picsum.photos/300',
-    '
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
-<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
-<h4>Links:</h4>
-<ul>
-    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
-    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
-</ul>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
-    '
-);
-
-INSERT INTO article (
-    art_author,
-    art_title,
-    art_resume,
-    art_thumbnail,
-    art_content
-) VALUES (
+), (
 	-- 'emp_id' de um staff existente --
 	'3',
-    'Décimo artigo',
+    'Chuvas atrapalham códigos do Twitter',
+    -- Deixe os mesmos valores para todos os outros artigos
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    'https://picsum.photos/300',
+    '
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
+<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
+<h4>Links:</h4>
+<ul>
+    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
+    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
+    '
+), (
+	-- 'emp_id' de um staff existente --
+	'2',
+    'Bolachas recheadas com Django',
+    -- Deixe os mesmos valores para todos os outros artigos
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    'https://picsum.photos/300',
+    '
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
+<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
+<h4>Links:</h4>
+<ul>
+    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
+    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
+    '
+), (
+	-- 'emp_id' de um staff existente --
+	'5',
+    'Pedras que rolam na TI',
+    -- Deixe os mesmos valores para todos os outros artigos
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    'https://picsum.photos/300',
+    '
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
+<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
+<h4>Links:</h4>
+<ul>
+    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
+    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
+    '
+) ,(
+	-- 'emp_id' de um staff existente --
+	'3',
+    'Construção de funções desfuncionais',
+    -- Deixe os mesmos valores para todos os outros artigos
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    'https://picsum.photos/300',
+    '
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, dolor ad alias nesciunt consequuntur in error enim numquam sit sunt! Quia eius tempora provident tempore culpa cupiditate sunt dignissimos?</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem qui voluptatum hic repudiandae labore quod deleniti temporibus perferendis quisquam recusandae, eum alias natus, dolor at! Error saepe est cupiditate consectetur!</p>
+<img src="https://picsum.photos/200/300" alt="Imagem aleatória">
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi consequatur laboriosam reiciendis dolorem, exercitationem dolor natus hic quisquam itaque maxime doloribus. Adipisci debitis quod perferendis repudiandae similique quam voluptatum eveniet.</p>
+<h4>Links:</h4>
+<ul>
+    <li><a href="https://catabist.com.br">Site do Fessô</a></li>
+    <li><a href="https://github.com/Luferat">Github do fessô</a></li>
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis a mollitia doloribus repudiandae incidunt ullam debitis, minima iure quia, recusandae odio magnam velit quos ad nam eaque. Ut, dolorem eveniet?</p>    
+    '
+), (
+	-- 'emp_id' de um staff existente --
+	'4',
+    'Quando os "Python" não tem vez',
     -- Deixe os mesmos valores para todos os outros artigos
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'https://picsum.photos/300',
@@ -462,44 +389,42 @@ INSERT INTO article (
     '
 );
 
--- Tabela "commente" --
+-- Tabela "comment" --
 INSERT INTO comment (
-    -- Insira um "art_id" existente --
-    com_article,
+	-- Insira um "art_id" existente --
+	com_article,
     com_author_name,
     com_author_email,
     com_comment
-    
 ) VALUES (
-    '10',
-    'Soraia',
-    'soraia@gmail.com'
+	'10',
+    'Marlinelson',
+    'marli@nelson.com',
     'É só mais um lorem ipsum.'
-    
 ), (
-    '4',
-    'João',
-    'joao@email.com'
-    'É só mais um lorem ipsum.'
+	'10',
+    'Edicleuza',
+    'edi@cleuza.com',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+), (
+	'2',
+    'Soiana',
+    'soraia@email.com',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+),(
+	'1',
+    'Edicleuson',
+    'edic@email.com',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+),(
+	'10',
+    'Normalinda',
+    'normalinda@email.com',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+);
 
-), (
-    '2',
-    'Marisa',
-    'marisa@email.com'
-    'É só mais um lorem ipsum.'
-    
-), (
-    '1',
-    'Paulo',
-    'paulo@email.com'
-    'É só mais um lorem ipsum.'
-    
-), (
-    '5',
-    'Marcia',
-    'marcia@email.com'
-    'É só mais um lorem ipsum.'
-    
+
+
 -- ----------------------------------- --
 -- Testes de SELECT                    --
 -- Dica: execute uma linha de cada vez --
@@ -508,21 +433,29 @@ INSERT INTO comment (
 -- Mostra todos os registros da tabela 'staff' --
 SELECT * FROM staff;
 
+-- Filtra staff pelo id
 SELECT * FROM staff WHERE emp_id = '5';
 
-SELECT * FROM staff where EMP_NAME = 'Maria Oliveira';
+-- Filtra staff pelo nome
+SELECT * FROM staff WHERE emp_name = 'Maria Oliveira';
 
--- Troque entre 'DESC e 'ASC' para testar a ordem
+-- Ordena lista de staff pelo nome
+-- Torque entre 'DESC' e 'ASC' para testar a ordem
 SELECT * FROM staff ORDER BY emp_name DESC;
 
--- Somente 'author'
+-- Somente campos específicos
+-- Somente o tipo 'author'
+-- Ordena pelo nome
 SELECT emp_id, emp_name, emp_email 
-FROM staff 
-WHERE emp_type = 'author'
-ORDER BY emp_name;
+	FROM staff 
+    WHERE emp_type = 'author' 
+    ORDER BY emp_name;
 
 -- Mostra todos os registros da tabela 'article' --
 SELECT * FROM article;
+
+-- Mostra todos os registros da tabela 'comment' --
+SELECT * FROM comment;
 
 
 
